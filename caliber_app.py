@@ -117,6 +117,12 @@ from langchain.agents import initialize_agent, load_tools
 from langchain_google_genai import ChatGoogleGenerativeAI
 import json
 
+from dotenv import load_dotenv
+import os
+
+# Load environment variables.
+load_dotenv()
+
 # Set the model name for our LLMs
 GEMINI_MODEL = "gemini-1.5-flash"
 # GEMINI_MODEL = "models/gemini-pro"
@@ -125,8 +131,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 # ✅ Initialize the model
 
-# GEMINI_API_KEY="AIzaSyAG6IWnU7OWRlBB8R5EZXFxmnHEwCpQY7o"
-# GOOGLE_API_KEY="AIzaSyAG6IWnU7OWRlBB8R5EZXFxmnHEwCpQY7o"
+
 
 llm = ChatGoogleGenerativeAI(google_api_key=GEMINI_API_KEY, model=GEMINI_MODEL, temperature=0.3)
 
